@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login UI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #eaeaea;
+    }
+
+    .header {
+      background-color: #007bff;
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .modal {
+      background-color: white;
+      width: 300px;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .modal .close {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .modal h3 {
+      margin-top: 0;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .modal input {
+      width: 95%;
+      margin: 8px 0;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 14px;
+    }
+
+    .modal button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 3px;
+      cursor: pointer;
+      float: right;
+      margin-top: 10px;
+    }
+
+    .buttons-below button {
+      display: block;
+      margin: 10px auto;
+      padding: 8px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      width: 150px;
+    }
+
+    #message {
+      text-align: center;
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    #error {
+      text-align: center;
+      color: red;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">Login</div>
+
+  <div class="container">
+    <div class="modal">
+      <span class="close" onclick="closeModal()">×</span>
+      <h3>Login</h3>
+      <input id="username" type="text" placeholder="Username | you password">
+      <input id="password" type="password" placeholder="Login password">
+      <button onclick="login()">Login</button>
+      <div id="message"></div>
+      <div id="error"></div>
+    </div>
+
+    <div class="buttons-below">
+      <button id="btn-success">Login successful</button>
+      <button id="btn-alert">Login alert</button>
+      <button id="btn-reset">Login successful</button>
+    </div>
+  </div>
+
+  <script>
+    function closeModal() {
+      document.querySelector('.modal').style.display = 'none';
+    }
+
+    function login() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const message = document.getElementById("message");
+      const error = document.getElementById("error");
+
+      message.textContent = "";
+      error.textContent = "";
+
+      if (username === "admin" && password === "1234") {
+        message.textContent = "Login successful!";
+      } else {
+        error.textContent = "Invalid username or password.";
+      }
+    }
+
+  
+    document.getElementById("btn-success").onclick = function () {
+      document.getElementById("message").textContent = "Login was successful!";
+      document.getElementById("error").textContent = "";
+    };
+
+    
+    document.getElementById("btn-alert").onclick = function () {
+      document.getElementById("error").textContent = "Login failed: Invalid credentials.";
+      document.getElementById("message").textContent = "";
+    };
+
+    
+    document.getElementById("btn-reset").onclick = function () {
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
+      document.getElementById("message").textContent = "";
+      document.getElementById("error").textContent = "";
+    };
+  </script>
+
+</body>
+</html>

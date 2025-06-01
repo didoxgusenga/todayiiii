@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Adding Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      padding-top: 50px;
+    }
+    .container {
+      border: 1px solid #333;
+      padding: 20px;
+      width: 400px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input[type="text"], input[type="email"], textarea, select {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    textarea {
+      height: 80px;
+    }
+    .buttons {
+      margin-top: 15px;
+    }
+    .buttons button {
+      padding: 8px 15px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Adding Profile for Chuck</h2>
+  <form id="profileForm">
+    <label>First Name:</label>
+    <input type="text" name="first_name" required>
+
+    <label>Last Name:</label>
+    <input type="text" name="last_name" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <label>Headline:</label>
+    <input type="text" name="headline" required>
+
+    <label>Summary:</label>
+    <textarea name="summary"></textarea>
+
+    <label>Position:</label>
+    <select name="position">
+      <option value="">Select</option>
+      <option value="Manager">Manager</option>
+      <option value="Engineer">Engineer</option>
+      <option value="Developer">Developer</option>
+    </select>
+
+    <label>Year:</label>
+    <input type="text" name="year" required>
+
+    <textarea name="position_description" placeholder="Position Description"></textarea>
+
+    <div class="buttons">
+      <button type="submit">Add</button>
+      <button type="button" onclick="clearForm()">Cancel</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  function clearForm() {
+    document.getElementById("profileForm").reset();
+  }
+
+  document.getElementById("profileForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("Profile submitted!");
+    
+  });
+</script>
+
+</body>
+</html>
