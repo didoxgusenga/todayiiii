@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demographic Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 20px 30px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 300px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      margin-bottom: 15px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .gender-options {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Demographic Information</h2>
+    <form>
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name="firstName">
+
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName">
+
+      <label for="age">Age</label>
+      <input type="text" id="age" name="age">
+
+      <label>Gender</label>
+      <div class="gender-options">
+        <label><input type="radio" name="gender" value="male"> Male</label>
+        <label><input type="radio" name="gender" value="female"> Female</label>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
