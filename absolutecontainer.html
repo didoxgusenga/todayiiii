@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four Corner Containers</title>
+    <style>
+        .parent-container {
+            display: flex;
+            width: 400px;  /* Or whatever size you want */
+            height: 400px; /* Or whatever size you want */
+            position: relative; /* Very important! */
+            border: 2px solid #aaa;
+            margin: 20px auto;
+        }
+
+        .child-container {
+            width: 100px; /* Example size */
+            height: 100px; /* Example size */
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+            /* Absolute positioning to put them in corners */
+            position: absolute;
+        }
+
+        .top-left {
+            top: 0;
+            left: 0;
+        }
+
+        .top-right {
+            top: 0;
+            right: 0;
+        }
+
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+        }
+
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent-container">
+        <div class="child-container top-left">
+            Top Left
+        </div>
+        <div class="child-container top-right">
+            Top Right
+        </div>
+        <div class="child-container bottom-left">
+            Bottom Left
+        </div>
+        <div class="child-container bottom-right">
+            Bottom Right
+        </div>
+    </div>
+</body>
+</html>
